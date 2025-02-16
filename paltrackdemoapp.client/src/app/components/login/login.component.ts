@@ -17,7 +17,7 @@ export class LoginComponent {
     useSubmitBehavior: true
   }
 
-  handleSubmit = (e: { preventDefault: () => void }): void => {
+  handleSubmit(e: Event): void {
     e.preventDefault();
     this.login();
   }
