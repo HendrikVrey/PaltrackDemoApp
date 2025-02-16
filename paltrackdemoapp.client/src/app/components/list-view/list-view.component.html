@@ -1,0 +1,57 @@
+<body>
+  <div class="container">
+    <dx-data-grid [dataSource]="persons"
+                  [showBorders]="true"
+                  [allowColumnReordering]="true"
+                  keyExpr="id"
+                  (onSaved)="onSaved($event)">
+      <dxo-scrolling rowRenderingMode="virtual"></dxo-scrolling>
+      <dxo-paging [pageSize]="10"> </dxo-paging>
+      <dxo-pager [visible]="true"
+                 [allowedPageSizes]="allowedPageSizes"
+                 [displayMode]="displayMode"
+                 [showPageSizeSelector]="showPageSizeSelector"
+                 [showInfo]="showInfo"
+                 [showNavigationButtons]="showNavButtons">
+      </dxo-pager>
+      <dxo-editing mode="popup"
+                   [allowAdding]="true"
+                   [allowUpdating]="true"
+                   [allowDeleting]="true">
+      </dxo-editing>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-search-panel [visible]="true"></dxo-search-panel>
+      <dxo-group-panel [visible]="true"></dxo-group-panel>
+      <dxi-column dataField="name"
+                  caption="Name">
+        <dxi-validation-rule type="required"
+                             message="Name is required">
+        </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="surname"
+                  caption="Surname">
+        <dxi-validation-rule type="required"
+                             message="Surname is required">
+        </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="email"
+                  caption="Email">
+        <dxi-validation-rule type="required"
+                             message="Email is required">
+        </dxi-validation-rule>
+        <dxi-validation-rule type="email"
+                             message="Invalid email">
+        </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="country"
+                  caption="Country">
+        <dxi-validation-rule type="required"
+                             message="Country is required">
+        </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="region"
+                  caption="Region">
+      </dxi-column>
+    </dx-data-grid>
+  </div>
+</body>

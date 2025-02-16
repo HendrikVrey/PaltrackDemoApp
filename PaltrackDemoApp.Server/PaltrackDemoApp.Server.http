@@ -1,0 +1,6 @@
+@PaltrackDemoApp.Server_HostAddress = http://localhost:5255
+
+GET {{PaltrackDemoApp.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
